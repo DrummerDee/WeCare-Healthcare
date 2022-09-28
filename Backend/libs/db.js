@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { connection } from "mongoose";
 
 const MONGO_URI = process.env.MONGO_URI
 
@@ -7,20 +7,23 @@ if (!MONGO_URI) { throw new Error('Please enter a valid mongo database string')}
 let cached = global.mongoose
 
 if(!cached) {cached = global.mongoose = {conn: null, promise : null}}
-
+const connection = {}
 async function dbConnect() {
-    if(cached.conn)
-    return cached.conn 
-if(!cached.promise){
-    const opts = {
-        bufferCommands : false,
-    }
-cached.promise = mongoose.connet(MONGO_URI, opts).then((mongoose) => {
-    return mongoose
-})
+   if(connection.isConnected){
+   console.log('Already connected to database')
+   return
 }
-cached.conn = await cached.promise 
-return cached.conn
+if(mongoose.connections.length > 0){
+    connection.isConnected = mongoose.connections[0].readyState
+        if(connection.isConnected === 1){
+            console.log('Use previous connection')
+            return
+        }
+        await mongoose.disconnect()
 }
-
+const db = await mongoose.connect(MONGO_URI)
+console.log('New connection')
+connection.isConnected = db.connections[0].readyState
+}
+const db = {connect}
 export default dbConnect
