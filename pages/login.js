@@ -3,7 +3,7 @@ import Link from 'next/link';
 
  const login = () => {
   return (
-    <form>
+    <form action='api/login' method='POST'>
         <div>
         <label htmlFor='email'> Email </label>
         <input type='email' placeholder='Enter Your Email' id='email' autoFocus/>
@@ -14,7 +14,7 @@ import Link from 'next/link';
         <Link href='forgot'> Forgot Password </Link>
         </div>
         <div>
-        <input type="submit" value='enter' />
+        <input type="submit" value='Sign In' />
         </div>
         <div>
         <h4> Don't have an account? <Link href='register'>Sign Up Here</Link> </h4>
