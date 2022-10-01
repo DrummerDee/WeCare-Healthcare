@@ -6,9 +6,9 @@ dbConnect()
 
 export default async function handler(req,res){
 const {email,password} = req.body
-const user = await User.find({email,password});
+const user = await User.findOne({email,password});
 if(!user){
-  return res.json({message: 'User not found',})
+  return res.json({message: 'User not found'})
 }else {
   res.redirect('/homepage')
 }
