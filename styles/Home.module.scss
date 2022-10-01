@@ -50,3 +50,6 @@ $color-secondary:#d1dbfa;
             transition: ease 0.3s;
         }
     }
+:export {
+    color-primary: $color-primary;
+}

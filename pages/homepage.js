@@ -19,28 +19,31 @@ const homepage = () => {
                 src={Logo}
                 className={homeStyles.image}
                 alt='Lavender background with black outlined hands with red heart hovering over the cusped hands'
-                width='70%'
-                height='70%'
+                width='75%'
+                height='75%'
               />
               </div>
         <nav>
           <ul className={homeStyles.navbar}>
-            <li> Something </li>
-            <li> Something </li>
-            <li> Something </li>
-            <li> Something</li>
+            <Link href='/clients'> Clients </Link>
+            <Link href='/resources'> Resources </Link>
+            <Link href='/we-chat'> WeChat </Link>
+            <Link href='/contacts'> Contacts </Link>
+            <Link href='/settings'> Settings </Link>
             <Link href='/api/auth/logout'> Logout </Link>
           </ul>
         </nav>
       </header>
+      <div className={homeStyles.greeting}>
       <h1> Welcome back, {user.nickname.toUpperCase()} !</h1>
       <span>Last Login : {user.updated_at}</span>
-      <main>
+      </div>
+      <main className={homeStyles.main}>
         <div>
-          <img src={user.picture} />
+          <img src={user.picture} className={homeStyles.userpic} />
         </div>
-        <h2> {user.nickname} </h2>
-        <span> {user.title}</span>
+        <h2> {user.nickname.toUpperCase()} </h2>
+        <span> Title{user.title}</span>
         <div>
           <h3> Latest Updates </h3>
         </div>
