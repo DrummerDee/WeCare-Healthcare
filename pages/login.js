@@ -6,11 +6,11 @@ import Link from 'next/link';
     <form action='api/login' method='POST'>
         <div>
         <label htmlFor='email'> Email </label>
-        <input type='email' placeholder='Enter Your Email' id='email' autoFocus/>
+        <input type='email' placeholder='Enter Your Email' id='email' autoFocus required/>
         </div>
         <div>
         <label> Password </label>
-        <input type='password' placeholder='Enter Your Password' id='password' autoFocus />
+        <input type='password' placeholder='Enter Your Password' id='password' autoFocus required/>
         <Link href='forgot'> Forgot Password </Link>
         </div>
         <div>
