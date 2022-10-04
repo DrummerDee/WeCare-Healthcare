@@ -1,6 +1,7 @@
 //css variables//
 $color-primary: white;
-$color-secondary:#d1dbfa;
+$color-secondary:#5353b4;
+$color-trecandary: #a8a8f7;
 //
 .container{
     padding: 0;
@@ -33,6 +34,7 @@ $color-secondary:#d1dbfa;
 
     h1{
         color:$color-primary;
+        font-size: 2.5rem;
     }
 }
     .navbar{
@@ -40,16 +42,25 @@ $color-secondary:#d1dbfa;
         justify-content: flex-end;
         gap: 2rem;
         padding: 0;
-    li {list-style-type: none}
+    li {
+        list-style-type: none
+    }
+    li:last-child{
+        padding-right: 1.2rem;
+    }
         a {
             text-decoration: none;
             color: $color-primary;
+            font-size: 1.2rem;
         }
         a:hover{
             color: $color-secondary;
             transition: ease 0.3s;
         }
     }
-:export {
-    color-primary: $color-primary;
-}
+    .footer{
+        position: fixed;
+        left: 0rem; bottom: 0rem;
+        font-size: 1rem;   
+        padding: 0 0 0.5rem 0.5rem;
+    }

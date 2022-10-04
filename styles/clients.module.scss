@@ -1,0 +1,47 @@
+@import './Homepage.module.scss';
+
+$other-bg-color: #f4f6fc;
+
+
+.header{
+    border: $border-btm;
+    box-shadow: $box-shadow;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+        .navbar{
+            display: flex;
+            align-items: center;
+            gap: 34rem;
+        }
+        .navbar > h2{
+            font-size: 1.6rem;
+        }
+        .navbar > a{
+            color:$color-trecandary;
+        }
+        .navbar > a:hover{
+            transition: ease 0.3s;
+            color: $color-secondary;
+        }
+}
+.overall{
+    height: 100vh;
+    .contain{
+        height: 100vh;
+    }
+    .img{
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border:$border-btm;
+    }
+    .dot{
+        height: 80%;
+        width: 18%;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+    }
+}

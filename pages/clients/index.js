@@ -1,6 +1,6 @@
 import React from 'react'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
-import clientStyles from '../styles/clients.module.scss'
+import clientStyles from '../../styles/clients.module.scss'
 import { BsArrowLeftCircle, BsPlusCircle } from 'react-icons/bs'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ const clients = () => {
             <header className={clientStyles.header}>
                 <nav className={clientStyles.navbar}>
                     <Link href='/homepage'><BsArrowLeftCircle /></Link>
-                    <h2>Clients <Link href='/clients/add-client'><BsPlusCircle/></Link></h2>
+                    <h2>Clients <Link href='/clients/addclient'><BsPlusCircle/></Link></h2>
                     <Link href='/api/auth/logout'><a>Logout </a></Link>
                 </nav>
             </header>

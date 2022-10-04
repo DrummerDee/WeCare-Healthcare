@@ -15,7 +15,8 @@
     "next": "12.3.1",
     "next-auth": "^4.12.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "nodemailer": "^6.8.0",

@@ -25,7 +25,7 @@ const homepage = () => {
               </div>
         <nav>
           <ul className={homeStyles.navbar}>
-            <Link href='/clients'> Clients </Link>
+            <Link href='/clients/index'> Clients </Link>
             <Link href='/resources'> Resources </Link>
             <Link href='/we-chat'> WeChat </Link>
             <Link href='/contacts'> Contacts </Link>

@@ -1,7 +1,13 @@
-// import {color-primary} from './Home.module.scss'
+@import './Home.module.scss';
+
+$box-shadow:rgba(0, 0, 0, 0.30) 0rem 0.5rem 2rem;
+$bg-color: whitesmoke;
+$border-btm: 0.1rem solid rgb(125, 125, 125);
 .header{
     height: 3.5rem;
-    border-bottom: 0.2rem solid black;
+    border-bottom: $border-btm;
+    box-shadow: $box-shadow;
+    background-color: $bg-color;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 2.5rem 0 2rem;
@@ -16,25 +22,31 @@
     justify-content: center;
     gap: 2rem;
     li {list-style-type: none}
+    a:active,
     a {
         text-decoration: none;
+        color:$color-trecandary;
     }
     a:hover{
         transition: ease 0.3s;
+        color: $color-secondary;
     }
 }
 }
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .userpic{
-        border-radius: 2rem;
-        height: 100%; width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 2rem;
+.body{
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: scroll;
+        .userpic{
+            border-radius: 2rem;
+            height: 100%; width: 100%;
+            box-shadow: $box-shadow
+        }
     }
-}
-.greeting {
-    padding-left: 1rem;
+    .greeting {
+        padding-left: 1rem;
+    }
 }
