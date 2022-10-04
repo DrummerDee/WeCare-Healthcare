@@ -15,7 +15,7 @@ const addclient = () => {
                 </nav>
             </header>
             <main>
-                <form >
+                <form action='/api/addclient' method='POST'>
                     <div>
                         <input type="file" name='image' accept='image/*' />
                     </div>
