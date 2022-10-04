@@ -27,8 +27,11 @@ export default function Home() {
         <main className={styles.main}>
         <h1 className={styles.title}> Welcome to WeCare Healthcare</h1>
         </main>
-        <footer>
+        <footer className={styles.footer}>
           <span>@WeCare Healthcare Services</span>
+          <div>
+            <span> Photo by <a href="https://unsplash.com/@nci?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">National Cancer Institute</a> on <a href="https://unsplash.com/s/photos/black-healthcare?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+            </div>
         </footer>
     </div>
   )

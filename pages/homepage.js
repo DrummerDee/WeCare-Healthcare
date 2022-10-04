@@ -34,11 +34,12 @@ const homepage = () => {
           </ul>
         </nav>
       </header>
+      <main className={homeStyles.body}>
       <div className={homeStyles.greeting}>
       <h1> Welcome back, {user.nickname.toUpperCase()} !</h1>
       <span>Last Login : {user.updated_at}</span>
       </div>
-      <main className={homeStyles.main}>
+      <section className={homeStyles.main}>
         <div>
           <img src={user.picture} className={homeStyles.userpic} />
         </div>
@@ -47,6 +48,7 @@ const homepage = () => {
         <div>
           <h3> Latest Updates </h3>
         </div>
+      </section>
       </main>
     </>
   )
