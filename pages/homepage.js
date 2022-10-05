@@ -10,7 +10,7 @@ import Logo from '../public/assests/Images/WeCare.png'
 
 const homepage = () => {
   const { user } = useUser()
-  console.log(user.last_login)
+  console.log(user)
   return (
     <>
       <header className={homeStyles.header}>

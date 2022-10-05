@@ -9,7 +9,7 @@ export default function Home() {
   const {user, error, isLoading} = useUser() 
 
   if(isLoading) return (<Load/>)
-  if(error) return (<div>{error.message}</div>)
+  if(error) return (<div>Oh no something went wrong{error.message}</div>)
   if(user){
     return (
       <>
