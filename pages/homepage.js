@@ -10,7 +10,7 @@ import Logo from '../public/assests/Images/WeCare.png'
 
 const homepage = () => {
   const { user } = useUser()
-  console.log(user)
+  console.log(user.last_login)
   return (
     <>
       <header className={homeStyles.header}>
@@ -25,7 +25,7 @@ const homepage = () => {
               </div>
         <nav>
           <ul className={homeStyles.navbar}>
-            <Link href='/clients/index'> Clients </Link>
+            <Link href='/clients/'> Clients </Link>
             <Link href='/resources'> Resources </Link>
             <Link href='/we-chat'> WeChat </Link>
             <Link href='/contacts'> Contacts </Link>
@@ -36,8 +36,8 @@ const homepage = () => {
       </header>
       <main className={homeStyles.body}>
       <div className={homeStyles.greeting}>
-      <h1> Welcome back, {user.nickname.toUpperCase()} !</h1>
-      <span>Last Login : {user.updated_at}</span>
+      <h1> Welcome back, {user.given_name || user.nickname} !</h1>
+      {/* <span>Last Login: {user.last_login}</span> */}
       </div>
       <section className={homeStyles.main}>
         <div>

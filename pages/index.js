@@ -3,9 +3,13 @@ import React from 'react'
 import Link from 'next/link'
 import { useUser } from '@auth0/nextjs-auth0'
 import Homepage from '../pages/homepage'
+import Load from '../Components/loading'
 
 export default function Home() {
-  const {user} = useUser() 
+  const {user, error, isLoading} = useUser() 
+
+  if(isLoading) return (<Load/>)
+  if(error) return (<div>{error.message}</div>)
   if(user){
     return (
       <>

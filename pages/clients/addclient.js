@@ -1,10 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import { BsArrowLeftCircle } from 'react-icons/bs'
 import addStyles from '../../styles/AddClient.module.scss'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import Image from 'next/image'
 
 const addclient = () => {
+    const [fileInput,setFileInput] = useState('')
+    const [previewSource,setPreviewSource] = useState('')
+    const [selectFile,setSelectFile] = useState('')
+    const handleFileInput = (e) => {
+        const file = e.target.files[0]
+        previewFile(file)
+    }
+    const previewFile = (file) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            setPreviewSource(reader.result)
+        }
+    }
     return (
         <>
             <header className={addStyles.header}>
@@ -15,9 +30,16 @@ const addclient = () => {
                 </nav>
             </header>
             <main>
+            {previewSource && (
+                    <Image src={previewSource}
+                        alt='choosen file'
+                        width='100'
+                        height='100'
+                        />
+                )}
                 <form action='/api/addclient' method='POST'>
                     <div>
-                        <input type="file" name='image' accept='image/*' />
+                        <input type="file" name='image' accept='image/*' onChange={handleFileInput} value={fileInput} className={addStyles.upload}/>
                     </div>
                     <div>
                         <label htmlFor="first-name">First Name</label>
@@ -41,7 +63,7 @@ const addclient = () => {
                         <label htmlFor="NonBinary">Non-Binary</label>
                     </div>
                     <div>
-                        <textarea col='20' row='30'> Please Enter Your Notes Here </textarea>
+                        <textarea col='20' row='30' placeholder='Please Enter Your Notes Here'> </textarea>
                     </div>
                     <input type='submit' value='Enter'/>
                 </form>

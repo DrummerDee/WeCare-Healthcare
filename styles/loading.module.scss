@@ -1,0 +1,21 @@
+ @import './clients.module.scss';
+ .loading{
+    display: flex;
+    justify-content: center;
+ }
+.loading::after{
+            content: '';
+            width: 3.125rem; 
+            height: 3.125rem;
+            border: 1.125rem solid $other-bg-color;
+            border-top-color: $color-trecandary;
+            border-radius: 50%;
+            animation: loading 1s linear infinite;
+        }
+// animation to make the circle spins 
+@keyframes loading {
+    to{
+        transform: rotate(1turn);
+    }
+}
+ 

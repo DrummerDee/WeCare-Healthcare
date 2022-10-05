@@ -1,6 +1,7 @@
 @import './Home.module.scss';
 
 $box-shadow:rgba(0, 0, 0, 0.30) 0rem 0.5rem 2rem;
+$other-box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 $bg-color: whitesmoke;
 $border-btm: 0.1rem solid rgb(125, 125, 125);
 .header{
@@ -43,7 +44,7 @@ $border-btm: 0.1rem solid rgb(125, 125, 125);
         .userpic{
             border-radius: 2rem;
             height: 100%; width: 100%;
-            box-shadow: $box-shadow
+            box-shadow: $other-box-shadow;
         }
     }
     .greeting {
