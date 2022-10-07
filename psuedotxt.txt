@@ -1,3 +1,39 @@
-Photo by <a href="https://unsplash.com/@nci?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">National Cancer Institute</a> on <a href="https://unsplash.com/s/photos/healthcare?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-^credit for photo
+For addClient page image code :
+const formReducer = (state,event) => {
+    return {
+        ...state,
+        [event.target.name]: event.target.value,
+
+    }
+}
+
+const addclient = () => {
+
+    const [formData, setFormData] = useReducer(formReducer, {})
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(Object.keys(formData).length == 0) return console.log('There is no form data')
+        console.log(formData)
+    } 
+    const [fileInput,setFileInput] = useState('')
+    const [previewSource,setPreviewSource] = useState('')
+    const [selectFile,setSelectFile] = useState('')
+    const handleFileInput = (e) => {
+        const file = e.target.files[0]
+        previewFile(file)
+    }
+    const previewFile = (file) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            setPreviewSource(reader.result)
+        }
+    }
+
+    {previewSource && (
+                    <Image src={previewSource}
+                        alt='choosen file'
+                        width='100'
+                        height='100'
+                        />
+                )}

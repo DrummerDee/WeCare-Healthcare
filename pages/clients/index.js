@@ -9,9 +9,10 @@ const clients = () => {
         <>
             <header className={clientStyles.header}>
                 <nav className={clientStyles.navbar}>
-                    <Link href='/homepage'><BsArrowLeftCircle /></Link>
-                    <h2>Clients <Link href='/clients/addclient'><BsPlusCircle/></Link></h2>
-                    <Link href='/api/auth/logout'><a>Logout </a></Link>
+                    <Link href='/homepage'><BsArrowLeftCircle size={34}/></Link>
+                    <h2>Clients </h2>
+                    <Link href='/clients/addclient'><BsPlusCircle/></Link>
+                    <Link href='/api/auth/logout'>Logout</Link>
                 </nav>
             </header>
             <main className={clientStyles.overall}>

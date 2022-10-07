@@ -1,6 +1,6 @@
 import {connect,connection} from 'mongoose'
 
-const MONG0_URI = process.env.MONG0_URI
+const MONGO_URI = process.env.MONGO_URI
 const conn = {
     isConnected : false
 }
@@ -9,7 +9,7 @@ export async function dbConnect(){
     if(conn.isConnected) 
     return; 
 
-    const db = await connect(MONG0_URI)
+    const db = connect(MONGO_URI)
 
     conn.isConnected = db.connections[0].readyState
 }
